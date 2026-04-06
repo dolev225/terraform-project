@@ -8,21 +8,19 @@ This repository automates the deployment of a EC2 instance and LB
   
 ## Architecture
 This project creates:
-* A **VPC** with a public subnet.
+* Deploy an EC2 Instance in the Public Subnet
+* Deploy an Application Load Balancer with Auto Scaling
 * A **Security Group** allowing Port 80 (HTTP) and 22 (SSH).
 * An **EC2 Instance** (t3.micro by default).
 
 ## 👩🏽‍🍳 The Process
 
-I started by rendering a canvas with rough.js to create the base for all the drawings. Then, I focused on drawing on the canvas, allowing users to make lines, rectangles, and other shapes.
+I started by setting a VPC with CIDR block and define subnet affter I created them . I define routing tables and attach it to the vpc .
 
-Next, I made sure users could move elements around. This was important for adjusting drawings. After that, I added the ability to resize elements to give more control over the shapes.
+the next step was attach an Internet Gateway to the VPC and associate it with the public subnet so we can connter the the EC2 throw the ethernet.
 
-To make sure mistakes could be fixed, I implemented undo and redo features. I also added freehand drawing for a more natural sketching experience and a text tool to label or note on the canvas.
 
-To navigate larger drawings, I put in pan and zoom tools. With everything functioning, I designed the whole UI to make it user-friendly and appealing.
-
-Finally, I added testing with Cypress and Testing Library. I conducted end-to-end tests on drawing and manipulating text, lines, rectangles, and freehand drawings to make sure everything worked smoothly.
+Finally, I run a test. I run the test on AWS privet accont and connet to the dns of the LB and stress test too check the LB & Auto Sscaling.
 
 Along the way, while building everything, I took notes on what I've learned so I don't miss out on it. I also documented the behind-the-scenes processes every time a feature was added.
 
@@ -31,49 +29,6 @@ This way, I understood what I've built. The funny thing is, as soon as I started
 ## 📚 What I Learned
 
 During this project, I've picked up important skills and a better understanding of complex ideas, which improved my logical thinking.
-
-### 🧠 `useHistory` Hook:
-
-- **Logical Thinking**: Creating the `useHistory` hook taught me to think about how to manage saving, undoing, and redoing actions. I had to really understand how to track changes and plan out user actions.
-
-### 📏 Coordinates and Measurements:
-
-- **Accuracy**: I've become better at working with shapes and points, like knowing if a point is inside a shape. This required careful measurements.
-- **Math Skills**: I used math functions to make sure everything was placed correctly and to calculate distances.
-
-### 🎨 Discovering Rough.js:
-
-- **New Tools**: I found out about Rough.js, which lets me make graphics look hand-drawn. This was a new and exciting tool for me.
-
-### 🔍 Deep Dive into Functions:
-
-- **Complex Functions**: I spent time understanding the `getSvgPathFromStroke` function, which turns drawing movements into smooth paths.
-
-### ✏️ Managing Points and Drawing:
-
-- **Working with Points**: I learned how to collect and use points from drawings, which involved understanding and managing data to reflect what the user does.
-
-### 🎣 React Hooks and Rendering:
-
-- **New Knowledge**: I learned about `useLayoutEffect`, which helps make sure changes are done before the screen updates. This was useful for certain drawing functions.
-
-### 🎡 Advanced Event Handling:
-
-- **User Interaction**: I worked with the wheel event listener, which allowed me to add zooming and panning features. This made the app more interactive and user-friendly.
-
-### 📈 Overall Growth:
-
-Each part of this project helped me understand more about building apps, managing complex information, and improving user experience. It was more than just making a tool. It was about solving problems, learning new things, and improving my skills for future work.
-
-## 💭 How can it be improved?
-
-- Add more colors to the color picker.
-- Add more tools like a circle, eraser, and more.
-- Add more shapes like triangles, stars, and more.
-- Add more keyboard shortcuts to make things faster.
-- Add more themes like dark mode, light mode, and more.
-- Add more text options like font size, font color, and more.
-- Instead of have any in two places, create a type for the rough.js elements.
 
 ## 🚦 Running the Project
 
