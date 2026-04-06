@@ -1,11 +1,11 @@
-## 🥷🏽 NinjaSketch
+## Terraform - setup
 
-This repository automates the deployment of a VPC and a EC2 instance.
+This repository automates the deployment of a EC2 instance and LB 
 
 ## 📦 Prerequisites
 * [Terraform](https://www.terraform.io/downloads.html) v1.0.0+
 * Configured AWS CLI (`aws configure`)
-* 
+  
 ## Architecture
 This project creates:
 * A **VPC** with a public subnet.
