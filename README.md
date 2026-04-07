@@ -8,6 +8,7 @@ This repository automates the deployment of a EC2 instance and LB
   
 ## Architecture
 This project creates:
+* Web app that do a CPU stresss test
 * Deploy an EC2 Instance in the Public Subnet
 * Deploy an Application Load Balancer with Auto Scaling
 * A **Security Group** allowing Port 80 (HTTP) and 22 (SSH).
@@ -17,8 +18,14 @@ This project creates:
 
 I started by setting a VPC with CIDR block and define subnet affter I created them . I define routing tables and attach it to the vpc .
 
-the next step was attach an Internet Gateway to the VPC and associate it with the public subnet so we can connter the the EC2 throw the ethernet.
+the next step was attach an Internet Gateway to the VPC and associate it with the public subnet so we be able to connect to the EC2 throw the ethernet after the EC2 was created i attach a secuiry group to the .
 
+the last step was to create the LB and the Auto scaling . I  started by created a TG , I choose 'Network Load Balancer' and associate it with the VPC I created earlyer 
+
+then attach the TG to the listeners to prot 80 .
+
+now all it left is to setup the Auto Scaling  for that i need to create a template for the EC2 scal (which machin to open when scaling (t.3micro) ) attach the LB to the AUTO Scaling and setup the Health check to 150 sec
+Configure group size and scaling to 2 min 4max .
 
 Finally, I run a test. I run the test on AWS privet accont and connet to the dns of the LB and stress test too check the LB & Auto Sscaling.
 
