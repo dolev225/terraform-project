@@ -41,7 +41,7 @@ During this project, I've picked up important skills and a better understanding 
 
 To run the project in your local environment, follow these steps:
 
-1. Clone the repository to your local machine.
-2. Run `npm install` or `yarn` in the project directory to install the required dependencies.
-3. Run `npm run start` or `yarn start` to get the project started.
-4. Open [http://localhost:5173](http://localhost:5173) (or the address shown in your console) in your web browser to view the app.
+1. Clone the repository to your local machine. 
+2. Run `terraform init`  in the project directory to initialize terraform.
+3. Run `terraform apply`  in the project directory to apply the code and enter the access key and Secret access for you AWS clint.
+4. at the command line you will see the URL you the LB then test the app and you can see the skilling up/down at the AWS instanss.
