@@ -1,6 +1,6 @@
 ## Terraform - setup
 
-This repository automates the deployment of a EC2 instance and LB 
+This repository automates the deployment an CPU stresser useing Auto scailing in AWS in environment
 
 ## 📦 Prerequisites
 * [Terraform](https://www.terraform.io/downloads.html) v1.0.0+
